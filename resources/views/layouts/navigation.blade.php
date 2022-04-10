@@ -50,6 +50,13 @@
                                 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 @endif">
                                 Dashboard
                             </a>
+                            <a href="{{ route('dashboard/settings') }}"
+                                class="block px-4 py-2 text-sm leading-5 transition duration-150 ease-in-out
+                            @if (request()->routeIs('dashboard/settings')) border-l-4 border-red-400 font-medium text-red-700 bg-red-50
+                            @else
+                                text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 @endif">
+                                Settings
+                            </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
@@ -109,6 +116,12 @@
                         @if (request()->routeIs('dashboard')) border-l-4 border-red-400 font-medium text-red-700 bg-red-50
                         @else text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 @endif">
                         Dashboard
+                    </a>
+                    <a href="{{ route('dashboard/settings') }}"
+                        class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium  focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out
+                        @if (request()->routeIs('dashboard/settings')) border-l-4 border-red-400 font-medium text-red-700 bg-red-50
+                        @else text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 @endif">
+                        Settings
                     </a>
                     <form method="POST" action="{{ route('logout') }}">
                         <!-- Authentication -->
