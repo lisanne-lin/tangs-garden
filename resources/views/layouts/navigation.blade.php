@@ -16,7 +16,7 @@
                         {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
-                        {{ __('Menu') }}
+                        {{ __('Menukaart') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -91,7 +91,7 @@
                 {{ __('Home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
-                {{ __('Menu') }}
+                {{ __('Menukaart') }}
             </x-responsive-nav-link>
         </div>
 
