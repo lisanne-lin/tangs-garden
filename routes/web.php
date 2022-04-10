@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Menu;
-use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,55 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-/**
- * render menu page
- */
-Route::get('/menu', function () {
-    $categories = Category::orderBy('order', 'ASC')
-        ->get();
 
-    $menu_items = Menu::with('category')
-        ->orderBy('number', 'ASC')
-        ->orderBy('name', 'ASC')
-        ->get();
-
-    return view('/menu', [
-        'menu_items' => $menu_items,
-        'categories' => $categories,
-    ]);
-})->name('menu');
-
-/**
- * On menu post do store
- */
+Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::post('/menu', [MenuController::class, 'store']);
 Route::delete('/menu/{menu}/', [MenuController::class, 'destroy'])->name('menu/');
 
-Route::get('/dashboard/settings', function () {
-    // get all Menu items orderd
-    $categories = Category::orderBy('order', 'ASC')
-        ->get();
-
-    return view('/dashboard/settings', [
-        'categories' => $categories
-    ]);
-})->middleware(['auth'])->name('dashboard/settings');
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
 Route::post('/dashboard/settings/category', [CategoryController::class, 'store'])->name('/dashboard/settings/category');
-
-Route::get('/dashboard', function () {
-    $categories = Category::orderBy('order', 'ASC')
-        ->get();
-
-    $menu_items = Menu::with('category')
-        ->orderBy('number', 'ASC')
-        ->orderBy('name', 'ASC')
-        ->get();
-
-    return view('/dashboard/index', [
-        'menu_items' => $menu_items,
-        'categories' => $categories,
-    ]);
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

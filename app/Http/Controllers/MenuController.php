@@ -8,6 +8,21 @@ use App\Models\Category;
 
 class MenuController extends Controller
 {
+    public function index() {
+        $categories = Category::orderBy('order', 'ASC')
+            ->get();
+
+        $menu_items = Menu::with('category')
+            ->orderBy('number', 'ASC')
+            ->orderBy('name', 'ASC')
+            ->get();
+
+        return view('/menu', [
+            'menu_items' => $menu_items,
+            'categories' => $categories,
+        ]);
+    }
+
     public function store(Request $request) {
         $this->validate($request, [
             'number' => 'required',
@@ -25,18 +40,7 @@ class MenuController extends Controller
             'category_id' => 1,
         ]);
 
-        $categories = Category::orderBy('order', 'ASC')
-            ->get();
-    
-        $menu_items = Menu::with('category')
-            ->orderBy('number', 'ASC')
-            ->orderBy('name', 'ASC')
-            ->get();
-
-        return view('/dashboard/index', [
-            'menu_items' => $menu_items,
-            'categories' => $categories,
-        ]);
+        $this->index();
     }
 
     public function destroy(Menu $menu) {
