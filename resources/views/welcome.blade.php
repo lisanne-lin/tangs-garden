@@ -13,6 +13,7 @@
         <main class="max-w-2xl mt-12 mx-auto text-center">
             <h1 class="text-4xl font-medium">Ho-wan-loi resto</h1>
             <p class="text-gray-600">website in the making</p>
+            <p>test</p>
         </main>
     </body>
 </html>
