@@ -19,6 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/menu', function () {
+    $menu_items = Menu::orderBy('number', 'ASC')
+        ->orderBy('name', 'ASC')
+        ->get();
+
+    return view('menu', [
+        'menu_items' => $menu_items
+    ]);
+})->name('menu');
+
 Route::post('/menu', [MenuController::class, 'store'])->name('menu');
 
 Route::get('/dashboard', function () {

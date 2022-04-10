@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
+                        {{ __('Menu') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -42,7 +45,7 @@
                             <!-- Authentication -->
                             <a href="{{ route('dashboard') }}"
                                 class="block px-4 py-2 text-sm leading-5 transition duration-150 ease-in-out
-                            @if (request()->routeIs('dashboard')) font-medium text-red-700 bg-red-50
+                            @if (request()->routeIs('dashboard')) border-l-4 border-red-400 font-medium text-red-700 bg-red-50
                             @else
                                 text-gray-600 hover:text-gray-800 hover:bg-gray-100 hover:border-gray-300 @endif">
                                 Dashboard
@@ -86,6 +89,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Home') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
+                {{ __('Menu') }}
             </x-responsive-nav-link>
         </div>
 
