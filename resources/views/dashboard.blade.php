@@ -47,8 +47,7 @@
                             @enderror
                         </div>
                         <div class="relative z-0 mb-6 w-full group">
-                            <label for="category"
-                                class="block mb-2 text-sm font-medium text-gray-900">Select food
+                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Select food
                                 category</label>
                             <select id="countries" name="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('category') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror">
@@ -66,8 +65,7 @@
 
 
                     <div class="mb-6">
-                        <label for="description"
-                            class="block mb-2 text-sm font-medium text-gray-900">Item
+                        <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Item
                             description</label>
                         <textarea id="description" name="description" rows="4"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 @error('description') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
@@ -85,8 +83,7 @@
                 @if ($menu_items->count())
                     <div class="relative overflow-x-auto rounded-lg mt-12 border border-gray-200">
                         <table class="w-full text-sm text-left text-gray-500 border">
-                            <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Number
