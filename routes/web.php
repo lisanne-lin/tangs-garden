@@ -25,13 +25,17 @@ Route::get('/', function () {
  * render menu page
  */
 Route::get('/menu', function () {
-    // get all Menu items orderd
-    $menu_items = Menu::orderBy('number', 'ASC')
+    $categories = Category::orderBy('order', 'ASC')
+        ->get();
+
+    $menu_items = Menu::with('category')
+        ->orderBy('number', 'ASC')
         ->orderBy('name', 'ASC')
         ->get();
 
-    return view('menu', [
-        'menu_items' => $menu_items
+    return view('/menu', [
+        'menu_items' => $menu_items,
+        'categories' => $categories,
     ]);
 })->name('menu');
 

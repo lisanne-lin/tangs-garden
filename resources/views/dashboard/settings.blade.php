@@ -19,7 +19,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/sortable.min.js') }}" defer></script>
-    <script src="{{ asset('js/sortable.js') }}" defer></script>
+    <script src="{{ asset('js/settings.js') }}" defer></script>
 </head>
 
 <body class="font-sans antialiased">
