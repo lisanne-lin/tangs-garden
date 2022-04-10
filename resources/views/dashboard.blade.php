@@ -19,7 +19,7 @@
                             <label for="number" class="block mb-2 text-sm font-medium text-gray-900">Order
                                 number</label>
                             <input type="text" id="number" name="number"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('number') border-2 border-red-500 bg-red-200 text-red-800 @enderror"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('number') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
                                 placeholder="10b">
                             @error('number')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
@@ -28,7 +28,7 @@
                         <div class="relative z-0 mb-6 w-full group">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                             <input type="text" id="name" name="name"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('name') border-2 border-red-500 bg-red-200 text-red-800 @enderror"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
                                 placeholder="Bami">
                             @error('name')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
@@ -40,7 +40,7 @@
                         <div class="relative z-0 mb-6 w-full group">
                             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Price</label>
                             <input type="number" id="price" name="price"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('price') border-2 border-red-500 bg-red-200 text-red-800 @enderror"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('price') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
                                 placeholder="20,00">
                             @error('price')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
@@ -48,10 +48,10 @@
                         </div>
                         <div class="relative z-0 mb-6 w-full group">
                             <label for="category"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Select food
+                                class="block mb-2 text-sm font-medium text-gray-900">Select food
                                 category</label>
                             <select id="countries" name="category"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('category') border-2 border-red-500 bg-red-200 text-red-800 @enderror">
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('category') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror">
                                 <option value="">Select Type</option>
                                 <option value="idk">idk</option>
                                 <option value="idk">idk2</option>
@@ -67,10 +67,10 @@
 
                     <div class="mb-6">
                         <label for="description"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Item
+                            class="block mb-2 text-sm font-medium text-gray-900">Item
                             description</label>
                         <textarea id="description" name="description" rows="4"
-                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 @error('description') border-2 border-red-500 bg-red-200 text-red-800 @enderror"
+                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 @error('description') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
                             placeholder="Description..."></textarea>
                         @error('description')
                             <p class="text-red-500 mt-1">{{ $message }}</p>
@@ -84,9 +84,9 @@
 
                 @if ($menu_items->count())
                     <div class="relative overflow-x-auto rounded-lg mt-12 border border-gray-200">
-                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border">
+                        <table class="w-full text-sm text-left text-gray-500 border">
                             <thead
-                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         Number
