@@ -10,11 +10,11 @@ class DashboardController extends Controller
 {
     public function index() {
         $categories = Category::orderBy('order', 'ASC')
-        ->get();
+            ->get();
 
         $menu_items = Menu::with('category')
             ->orderBy('number', 'ASC')
-            ->orderBy('name', 'ASC')
+            ->orderBy('letter', 'ASC')
             ->get();
 
         return view('/dashboard/index', [

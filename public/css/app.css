@@ -667,6 +667,9 @@ select {
 .-mt-px {
   margin-top: -1px;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .mt-6 {
   margin-top: 1.5rem;
 }
@@ -678,9 +681,6 @@ select {
 }
 .mt-1 {
   margin-top: 0.25rem;
-}
-.mt-12 {
-  margin-top: 3rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -763,11 +763,11 @@ select {
 .max-w-6xl {
   max-width: 72rem;
 }
-.max-w-7xl {
-  max-width: 80rem;
-}
 .max-w-2xl {
   max-width: 42rem;
+}
+.max-w-7xl {
+  max-width: 80rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -803,10 +803,6 @@ select {
 .cursor-grab {
   cursor: -webkit-grab;
   cursor: grab;
-}
-.cursor-grabbing {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
 }
 .list-inside {
   list-style-position: inside;
@@ -916,10 +912,6 @@ select {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
 }
-.border-gray-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(249 250 251 / var(--tw-border-opacity));
-}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -955,9 +947,6 @@ select {
 }
 .p-2 {
   padding: 0.5rem;
-}
-.p-4 {
-  padding: 1rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1054,6 +1043,10 @@ select {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1065,10 +1058,6 @@ select {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 .text-base {
   font-size: 1rem;
