@@ -1,89 +1,64 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Settings') }}
+        </h2>
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg">
+                <h2 class="text-2xl">Categories</h2>
+                <div class="grid md:grid-cols-2 md:gap-6 mt-2">
+                    <div class="relative z-0 mb-6 w-full group">
+                        <form action="{{ route('dashboard/settings/category') }}" method="POST">
+                            @csrf
+                            <input type="text" id="name" name="name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
+                                placeholder="Soep">
+                            @error('name')
+                                <p class="text-red-500 mt-1">{{ $message }}</p>
+                            @enderror
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <style>
-        .sortable-ghost {
-            opacity: .6;
-        }
-    </style>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/sortable.min.js') }}" defer></script>
-    <script src="{{ asset('js/settings.js') }}" defer></script>
-</head>
-
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
-
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                    Settings
-                </h1>
-            </div>
-        </header>
-
-        <!-- Page Content -->
-        <main>
-            <div class="py-12">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg">
-                        <h2 class="text-2xl">Categories</h2>
-                        <div class="grid md:grid-cols-2 md:gap-6 mt-2">
-                            <div class="relative z-0 mb-6 w-full group">
-                                <div id="items">
-                                    @if ($categories->count())
-                                        @foreach ($categories as $category)
-                                            <div class="w-full bg-white border border-gray-200 px-4 py-2 rounded-lg cursor-grab mb-2">{{ $category->name }}</div>
-                                        @endforeach
-                                    @else
-                                        No categories found
-                                    @endif
+                            <button type="submit"
+                                class="text-white bg-red-500 hover:bg-red-700 transition-colors focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mt-4">Add
+                                category</button>
+                        </form>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        @if ($categories->count())
+                            @foreach ($categories as $category)
+                                <div
+                                    class="w-full bg-white border border-gray-200 px-4 py-2 rounded-lg mb-2 flex items-center justify-between">
+                                    {{ $category->name }}
+                                    <form data-form-id="{{ $category->id }}"
+                                        action="{{ route('dashboard/settings/category/', $category) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="button" onclick="confirmDelete({{ $category->id }})"
+                                            class="font-medium text-red-600 dark:text-red-500 hover:underline"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="-3 -2 24 24" width="24"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M6 2V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h4a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-.133l-.68 10.2a3 3 0 0 1-2.993 2.8H5.826a3 3 0 0 1-2.993-2.796L2.137 7H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4zm10 2H2v1h14V4zM4.141 7l.687 10.068a1 1 0 0 0 .998.932h6.368a1 1 0 0 0 .998-.934L13.862 7h-9.72zM7 8a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v7a1 1 0 0 1-2 0V9a1 1 0 0 1 1-1z">
+                                                </path>
+                                            </svg></button>
+                                    </form>
                                 </div>
-                            </div>
-                            <div class="relative z-0 mb-6 w-full group">
-                                <form action="{{ route('/dashboard/settings/category') }}" method="POST">
-                                    @csrf
-                                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Category
-                                        name</label>
-                                    <input type="text" id="name" name="name"
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
-                                        placeholder="Soep">
-                                    @error('name')
-                                        <p class="text-red-500 mt-1">{{ $message }}</p>
-                                    @enderror
-
-                                    <button type="submit"
-                                        class="text-white bg-red-500 hover:bg-red-700 transition-colors focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mt-4">Add
-                                        category</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
-                        <h2 class="text-2xl">Opening times</h2>
-                    </div>
-
-                    <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
-                        <h2 class="text-2xl">Deal of the month</h2>
+                            @endforeach
+                        @else
+                            No categories found
+                        @endif
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
-</body>
 
-</html>
+            <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
+                <h2 class="text-2xl">Opening times</h2>
+            </div>
+
+            <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
+                <h2 class="text-2xl">Deal of the month</h2>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

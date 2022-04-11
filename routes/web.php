@@ -28,6 +28,7 @@ Route::delete('/menu/{menu}/', [MenuController::class, 'destroy'])->name('menu/'
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/dashboard/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
-Route::post('/dashboard/settings/category', [CategoryController::class, 'store'])->name('/dashboard/settings/category');
+Route::post('/dashboard/settings/category', [CategoryController::class, 'store'])->name('dashboard/settings/category');
+Route::delete('/dashboard/settings/category/{category}/', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
 
 require __DIR__.'/auth.php';

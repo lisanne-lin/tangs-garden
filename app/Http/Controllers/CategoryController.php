@@ -26,4 +26,10 @@ class CategoryController extends Controller
             'categories' => $categories
         ]);
     }
+
+    public function destroy(Category $category) {
+        $category->delete();
+
+        return back();
+    }
 }

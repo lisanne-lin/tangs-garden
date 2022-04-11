@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('price');
             $table->text('description')->nullable(true);
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
         });
     }

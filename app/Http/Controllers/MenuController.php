@@ -34,7 +34,7 @@ class MenuController extends Controller
         ]);
 
         // create if it has a letter or new number is bigger than last
-        if ($request->letter || intval($request->number) > Menu::latest()->limit(1)->first()->number) {
+        if ($request->letter || (Menu::latest()->limit(1)->first() !== null && intval($request->number) > Menu::latest()->limit(1)->first()->number)) {
 
             Menu::create([
                 'number' => $request->number,
