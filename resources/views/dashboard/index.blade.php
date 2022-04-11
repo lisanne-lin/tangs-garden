@@ -11,25 +11,39 @@
                 <div class="bg-white">
                     <h1 class="text-2xl">Welcome back {{ Auth::user()->name }}</h1>
                 </div>
-
+                
+                @if($categories->count())
                 <form action="{{ route('menu') }}" method="POST" class="mt-6">
                     @csrf
                     <div class="grid md:grid-cols-2 md:gap-6">
-                        <div class="relative z-0 mb-6 w-full group">
-                            <label for="number" class="block mb-2 text-sm font-medium text-gray-900">Menu
-                                number</label>
-                            <input type="text" id="number" name="number"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('number') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
-                                placeholder="10b">
-                            @error('number')
-                                <p class="text-red-500 mt-1">{{ $message }}</p>
-                            @enderror
+                        <div class="grid md:grid-cols-2 md:gap-6">
+                            <div class="relative z-0 mb-6 w-full group">
+                                <label for="number" class="block mb-2 text-sm font-medium text-gray-900">Menu
+                                    number</label>
+                                <input type="text" id="number" name="number"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('number') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
+                                    placeholder="10" value="{{ old('number') }}">
+                                @error('number')
+                                    <p class="text-red-500 mt-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <div class="relative z-0 mb-6 w-full group">
+                                <label for="letter" class="block mb-2 text-sm font-medium text-gray-900">Menu
+                                    letter</label>
+                                <input type="text" id="letter" name="letter"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('letter') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
+                                    placeholder="b" value="{{ old('letter') }}">
+                                @error('letter')
+                                    <p class="text-red-500 mt-1">{{ $message }}</p>
+                                @enderror
+                            </div>
                         </div>
+                        
                         <div class="relative z-0 mb-6 w-full group">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
                             <input type="text" id="name" name="name"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('name') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
-                                placeholder="Bami">
+                                placeholder="Bami" value="{{ old('name') }}">
                             @error('name')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
                             @enderror
@@ -41,7 +55,7 @@
                             <label for="price" class="block mb-2 text-sm font-medium text-gray-900">Price</label>
                             <input type="text" id="price" name="price"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('price') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
-                                placeholder="20,00">
+                                placeholder="20,00" value="{{ old('price') }}">
                             @error('price')
                                 <p class="text-red-500 mt-1">{{ $message }}</p>
                             @enderror
@@ -49,11 +63,11 @@
                         <div class="relative z-0 mb-6 w-full group">
                             <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Select food
                                 category</label>
-                            <select id="countries" name="category"
+                            <select id="category" name="category"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 @error('category') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror">
                                 <option value="">Select Type</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" @if(old('category') == $category->id) selected @endif>{{ $category->name }}</option>
                                 @endforeach
                             </select>
                             @error('category')
@@ -68,7 +82,7 @@
                             description</label>
                         <textarea id="description" name="description" rows="4"
                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 @error('description') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
-                            placeholder="Description..."></textarea>
+                            placeholder="Description...">{{ old('description') }}</textarea>
                         @error('description')
                             <p class="text-red-500 mt-1">{{ $message }}</p>
                         @enderror
@@ -130,7 +144,16 @@
                         </table>
                     </div>
                 @else
-                    There are no menu items
+                    <div class="mt-4">
+                        There are no menu items
+                    </div>
+                @endif
+                @else
+                    <div class="mt-4">
+                        <h2 class="mb-4 text-gray-600">Start by adding a category</h2>
+                        <a href="{{ route('dashboard/settings') }}"
+                            class="text-white bg-red-500 hover:bg-red-700 transition-colors focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Add categorie</a>
+                    </div>
                 @endif
             </div>
         </div>
