@@ -634,6 +634,10 @@ select {
   margin-left: auto;
   margin-right: auto;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -690,9 +694,6 @@ select {
 }
 .-mr-2 {
   margin-right: -0.5rem;
-}
-.mr-4 {
-  margin-right: 1rem;
 }
 .block {
   display: block;
@@ -760,12 +761,6 @@ select {
 .w-6 {
   width: 1.5rem;
 }
-.w-2 {
-  width: 0.5rem;
-}
-.w-12 {
-  width: 3rem;
-}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -808,10 +803,6 @@ select {
 }
 .cursor-default {
   cursor: default;
-}
-.cursor-grab {
-  cursor: -webkit-grab;
-  cursor: grab;
 }
 .list-inside {
   list-style-position: inside;
@@ -1081,6 +1072,9 @@ select {
 .uppercase {
   text-transform: uppercase;
 }
+.italic {
+  font-style: italic;
+}
 .leading-5 {
   line-height: 1.25rem;
 }
@@ -1254,6 +1248,42 @@ select {
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+.ck-content > blockquote,
+.ck-content > dl,
+.ck-content > dd,
+.ck-content > h1,
+.ck-content > h2,
+.ck-content > h3,
+.ck-content > h4,
+.ck-content > h5,
+.ck-content > h6,
+.ck-content > hr,
+.ck-content > figure,
+.ck-content > p,
+.ck-content > pre {
+  /* margin: revert; */
+}
+.ck-content > ol,
+.ck-content > ul {
+  list-style: revert;
+  margin: revert;
+  padding: revert;
+}
+.ck-content > table {
+  border-collapse: revert;
+}
+.ck-content > h1,
+.ck-content > h2,
+.ck-content > h3,
+.ck-content > h4,
+.ck-content > h5,
+.ck-content > h6 {
+  font-size: revert;
+  font-weight: revert;
+}
+.ck-editor__editable_inline {
+    min-height: 200px;
+ }
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -1519,4 +1549,5 @@ select {
     padding-right: 2rem;
   }
 }
+
 

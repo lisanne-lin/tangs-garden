@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Menu;
+use App\Models\PageText;
 use App\Http\Controllers\DashboardController;
 use App\Models\Category;
 
@@ -19,9 +20,13 @@ class MenuController extends Controller
             ->orderBy('letter', 'ASC')
             ->get();
 
+        $page_text = PageText::where('slug', 'menukaart')
+            ->first();
+
         return view('/menu', [
             'menu_items' => $menu_items,
             'categories' => $categories,
+            'page_text' => $page_text,
         ]);
     }
 

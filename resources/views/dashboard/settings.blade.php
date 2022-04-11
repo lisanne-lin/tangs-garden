@@ -52,13 +52,52 @@
                 </div>
             </div>
 
-            <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
-                <h2 class="text-2xl">Opening times</h2>
-            </div>
 
             <div class="bg-white p-6 overflow-hidden shadow-sm sm:rounded-lg mt-12">
-                <h2 class="text-2xl">Deal of the month</h2>
+                <h2 class="text-2xl">Page texts</h2>
+
+                @if ($page_texts->count())
+                    <form action="{{ route('dashboard/settings/text') }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        @foreach ($page_texts as $page_text)
+                            <hr class="mt-2 mb-4">
+                            <h4 class="text-lg">{{ $page_text->title }}</h4>
+                            <div class="mb-6 mt-4">
+                                <textarea id="{{ $page_text->slug }}" name="{{ $page_text->slug }}" rows="4"
+                                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-red-500 focus:border-red-500 @error('{{ $page_text->slug }}') bg-red-50 border-red-500 text-red-900 placeholder-red-700 @enderror"
+                                    placeholder="{{ $page_text->title }}...">{{ (old('slug')) ? old('slug') : $page_text->body }}</textarea>
+                                @error('{{ $page_text->slug }}')
+                                    <p class="text-red-500 mt-1">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        @endforeach
+
+                        <button type="submit"
+                        class="text-white bg-red-500 hover:bg-red-700 transition-colors focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mt-4">Save text</button>
+                    </form>
+                @else
+                    <div class="text-gray-600">
+                        No texts found
+                    </div>
+                @endif
             </div>
         </div>
     </div>
+
+
+    <script>
+        @if ($page_texts->count())
+            @foreach ($page_texts as $page_text)
+                ClassicEditor
+                    .create( document.querySelector( '#{{ $page_text->slug }}' ), {
+                        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable' ],
+                    } )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+            @endforeach
+        @endif
+        
+    </script>
 </x-app-layout>

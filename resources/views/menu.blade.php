@@ -21,6 +21,10 @@
             @else
                 No menu items
             @endif
+
+            @if ($page_text->count())
+                {!! $page_text->body !!}
+            @endif
         </main>
     </body>
 </html>

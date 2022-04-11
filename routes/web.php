@@ -3,6 +3,7 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\PageTextController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,5 +34,6 @@ Route::put('/dashboard/menu/edit/{id}', [MenuController::class, 'update'])->name
 Route::get('/dashboard/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
 Route::post('/dashboard/settings/category', [CategoryController::class, 'store'])->name('dashboard/settings/category');
 Route::delete('/dashboard/settings/category/{category}/', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
+Route::put('/dashboard/settings/text', [PageTextController::class, 'update'])->name('dashboard/settings/text');
 
 require __DIR__.'/auth.php';
