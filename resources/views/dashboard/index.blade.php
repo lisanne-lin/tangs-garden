@@ -99,7 +99,7 @@
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
-                                        Number
+                                        #
                                     </th>
                                     <th scope="col" class="px-6 py-3">
                                         Name
@@ -111,7 +111,13 @@
                                         Price
                                     </th>
                                     <th scope="col" class="px-6 py-3">
+                                        Description
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
                                         <span class="sr-only">Edit</span>
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        <span class="sr-only">Delete</span>
                                     </th>
                                 </tr>
                             </thead>
@@ -135,7 +141,15 @@
                                         <td class="px-6 py-4">
                                             {{ $menu_item->price }}
                                         </td>
+                                        <td class="px-6 py-4">
+                                            {{ substr($menu_item->description, 0, 20) }}...
+                                        </td>
                                         <td class="px-6 py-4 text-right">
+                                            <a href="{{ route("dashboard/menu/edit/", $menu_item->id) }}">
+                                                <button><svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 -2.5 24 24" width="24" fill="currentColor"><path d="M12.238 5.472L3.2 14.51l-.591 2.016 1.975-.571 9.068-9.068-1.414-1.415zM13.78 3.93l1.414 1.414 1.318-1.318a.5.5 0 0 0 0-.707l-.708-.707a.5.5 0 0 0-.707 0L13.781 3.93zm3.439-2.732l.707.707a2.5 2.5 0 0 1 0 3.535L5.634 17.733l-4.22 1.22a1 1 0 0 1-1.237-1.241l1.248-4.255 12.26-12.26a2.5 2.5 0 0 1 3.535 0z"></path></svg></button>
+                                            </a>
+                                        </td>
+                                        <td class="px-6 py-4 text-right w-6">
                                             <form data-form-id="{{ $menu_item->id }}" action="{{ route('menu/', $menu_item) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
