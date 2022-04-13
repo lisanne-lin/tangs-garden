@@ -23,17 +23,21 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::post('/menu', [MenuController::class, 'store']);
-Route::delete('/menu/{menu}/', [MenuController::class, 'destroy'])->name('menu/');
+Route::group(['prefix' => 'menu'], function() {
+    Route::get('/', [MenuController::class, 'index'])->name('menu');
+    Route::post('/', [MenuController::class, 'store']);
+    Route::delete('/{menu}/', [MenuController::class, 'destroy'])->name('menu/');
+});
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
-Route::get('/dashboard/menu/edit/{id}', [MenuController::class, 'editPage'])->middleware(['auth'])->name('dashboard/menu/edit/');
-Route::put('/dashboard/menu/edit/{id}', [MenuController::class, 'update'])->name('dashboard/menu/edit/');
+Route::group(['prefix' => 'dashboard'], function() {
+    Route::get('/', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+    Route::get('/menu/edit/{id}', [MenuController::class, 'editPage'])->middleware(['auth'])->name('dashboard/menu/edit/');
+    Route::put('/menu/edit/{id}', [MenuController::class, 'update'])->name('dashboard/menu/edit/');
 
-Route::get('/dashboard/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
-Route::post('/dashboard/settings/category', [CategoryController::class, 'store'])->name('dashboard/settings/category');
-Route::delete('/dashboard/settings/category/{category}/', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
-Route::put('/dashboard/settings/text', [PageTextController::class, 'update'])->name('dashboard/settings/text');
+    Route::get('/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
+    Route::post('/settings/category', [CategoryController::class, 'store'])->name('dashboard/settings/category');
+    Route::delete('/settings/category/{category}/', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
+    Route::put('/settings/text', [PageTextController::class, 'update'])->name('dashboard/settings/text');
+});
 
 require __DIR__.'/auth.php';
