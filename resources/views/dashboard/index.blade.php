@@ -95,7 +95,7 @@
 
                 @if ($menu_items->count())
                     <div class="relative overflow-x-auto rounded-lg mt-12 border border-gray-200">
-                        <table class="w-full text-sm text-left text-gray-500 border">
+                        <table class="w-full text-sm text-left text-gray-500">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
@@ -121,9 +121,9 @@
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="divide-y">
                                 @foreach ($menu_items as $menu_item)
-                                    <tr class="bg-white border-b">
+                                    <tr class="bg-white">
                                         <th scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                             {{ $menu_item->number }}{{ $menu_item->letter }}
@@ -142,7 +142,11 @@
                                             {{ $menu_item->price }}
                                         </td>
                                         <td class="px-6 py-4">
-                                            {{ substr($menu_item->description, 0, 20) }}...
+                                            @if (strlen($menu_item->description) >= 20 )
+                                                {{ substr($menu_item->description, 0, 20) }}...
+                                            @else
+                                                {{ $menu_item->description }}
+                                            @endif
                                         </td>
                                         <td class="px-6 py-4 text-right">
                                             <a href="{{ route("dashboard/menu/edit/", $menu_item->id) }}">
