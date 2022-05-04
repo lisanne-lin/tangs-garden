@@ -39,27 +39,6 @@ class MenuController extends Controller
             'category' => 'required'
         ]);
 
-        // create if it has a letter or new number is bigger than last
-        if ($request->letter || (Menu::latest()->limit(1)->first() !== null && intval($request->number) > Menu::latest()->limit(1)->first()->number)) {
-
-            Menu::create([
-                'number' => $request->number,
-                'letter' => $request->letter,
-                'name' => $request->name,
-                'price' => $request->price,
-                'description' => $request->description,
-                'category_id' => $request->category,
-            ]);
-    
-            return back();
-        }
-
-        // if not than find all numbers above and increment with 1
-        Menu::where('number', '>=', $request->number)
-            ->update([
-                'number'=> DB::raw('number+1')
-        ]);
-
         // create menu item
         Menu::create([
             'number' => $request->number,
@@ -84,27 +63,6 @@ class MenuController extends Controller
 
         $dashboard = new DashboardController;
 
-        // create if it has a letter or new number is bigger than last
-        if ($request->letter || (Menu::latest()->limit(1)->first() !== null && intval($request->number) > Menu::latest()->limit(1)->first()->number)) {
-
-            Menu::find($id)->update([
-                'number' => $request->number,
-                'letter' => $request->letter,
-                'name' => $request->name,
-                'price' => $request->price,
-                'description' => $request->description,
-                'category_id' => $request->category,
-            ]);
-            
-            return $dashboard->index();
-        }
-
-        // if not than find all numbers above and increment with 1
-        Menu::where('number', '>=', $request->number)
-            ->update([
-                'number'=> DB::raw('number+1')
-        ]);
-
         // create menu item
         Menu::find($id)->update([
             'number' => $request->number,
@@ -121,14 +79,6 @@ class MenuController extends Controller
     public function destroy(Menu $menu) {
         // delete row
         $menu->delete();
-
-        // check if more with that number exsist if not than decrement all rows above
-        if (Menu::where('number', $menu->number)->get()->count() === 0) {
-            Menu::where('number', '>', $menu->number)
-                ->update([
-                    'number'=> DB::raw('number-1')
-            ]);
-        }
 
         return back();
     }
