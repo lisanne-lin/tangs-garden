@@ -34,7 +34,7 @@
                                         action="{{ route('dashboard/settings/category/', $category) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="button" onclick="confirmDelete({{ $category->id }})"
+                                        <button type="submit" onclick="confirmDelete(event, {{ $category->id }})"
                                             class="font-medium text-red-600 dark:text-red-500 hover:underline"><svg
                                                 xmlns="http://www.w3.org/2000/svg" viewBox="-3 -2 24 24" width="24"
                                                 fill="currentColor">

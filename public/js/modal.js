@@ -1,6 +1,6 @@
-const confirmDelete = (id) => {
+const confirmDelete = (e, id) => {
+    e.preventDefault();
     const form = document.querySelector(`[data-form-id="${id}"]`);
-    console.log(form);
 
     if (confirm("Are you sure")) {
         form.submit();

@@ -36,7 +36,7 @@ Route::group(['prefix' => 'dashboard'], function() {
 
     Route::get('/settings', [SettingsController::class, 'index'])->middleware(['auth'])->name('dashboard/settings');
     Route::post('/settings/category', [CategoryController::class, 'store'])->name('dashboard/settings/category');
-    Route::delete('/settings/category/{category}/', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
+    Route::delete('/settings/category/{category}', [CategoryController::class, 'destroy'])->name('dashboard/settings/category/');
     Route::put('/settings/text', [PageTextController::class, 'update'])->name('dashboard/settings/text');
 });
 
