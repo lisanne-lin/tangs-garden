@@ -22,7 +22,7 @@
                 No menu items
             @endif
 
-            @if ($page_text->count())
+            @if ($page_text)
                 {!! $page_text->body !!}
             @endif
         </main>
