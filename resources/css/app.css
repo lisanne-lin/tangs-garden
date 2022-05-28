@@ -5,45 +5,35 @@
 .nice-shadow {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
-.ck-content > blockquote,
-.ck-content > dl,
-.ck-content > dd,
-.ck-content > h1,
-.ck-content > h2,
-.ck-content > h3,
-.ck-content > h4,
-.ck-content > h5,
-.ck-content > h6,
-.ck-content > hr,
-.ck-content > figure,
-.ck-content > p,
-.ck-content > pre {
-  /* margin: revert; */
+.ck-editor {
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
-.ck-content > ol,
-.ck-content > ul {
-  list-style: revert;
-  margin: revert;
-  padding: revert;
+.ck-editor p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
 }
 
-.ck-content > table {
-  border-collapse: revert;
+.ck-editor h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3333333;
 }
 
-.ck-content > h1,
-.ck-content > h2,
-.ck-content > h3,
-.ck-content > h4,
-.ck-content > h5,
-.ck-content > h6 {
-  font-size: revert;
-  font-weight: revert;
+.ck-editor h4 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
 }
 
-.ck-editor__editable_inline {
-    min-height: 200px;
- }
-
+.ck-editor ol {
+  list-style-type: decimal;
+  padding-left: 1.625em;
+}
+.ck-editor li {
+  padding-left: 0.375em;
+}
