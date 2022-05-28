@@ -22,10 +22,20 @@ class MenuController extends Controller
         $page_text = PageText::where('slug', 'menukaart')
             ->first();
 
+        $sorted_menu_items = array();
+        
+        // put menu items all under the right category
+        foreach ($menu_items as $menu_item) {
+            if (!array_key_exists($menu_item->category->name, $sorted_menu_items)) {
+                $sorted_menu_items[$menu_item->category->name] = array();
+            }
+            $sorted_menu_items[$menu_item->category->name] = array_merge($sorted_menu_items[$menu_item->category->name], [$menu_item]);
+        }
+
         return view('/menu', [
-            'menu_items' => $menu_items,
             'categories' => $categories,
             'page_text' => $page_text,
+            'sorted_menu_items' => $sorted_menu_items,
         ]);
     }
 
