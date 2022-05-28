@@ -2,6 +2,8 @@
 
 To run laravel you need to install *php* and *composer*. If all that is done be sure to add a .env with all the right settings(check the .env.example for reference).
 
+To get all settings right create an `.env` and set all things correctly(check `.env.example` for an example)
+
 If you have installed it you need to run the following commands:
 
 ```bash
