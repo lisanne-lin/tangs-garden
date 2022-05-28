@@ -16,6 +16,15 @@ class PageTextController extends Controller
         ]);
     }
 
+    public function contact() {
+        $page_text = PageText::where('slug', 'contact')
+            ->first();
+
+        return view('/contact', [
+            'page_text' => $page_text,
+        ]);
+    }
+
     public function update(Request $request) {
         $keys = $request->all();
         unset($keys['_token']);

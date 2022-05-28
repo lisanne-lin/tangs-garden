@@ -23,6 +23,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/maandaanbieding', [PageTextController::class, 'maandaanbieding'])->name('maandaanbieding');
+Route::get('/contact', [PageTextController::class, 'contact'])->name('contact');
 
 
 Route::group(['prefix' => 'menu'], function() {
