@@ -22,6 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/maandaanbieding', [PageTextController::class, 'maandaanbieding'])->name('maandaanbieding');
+
 
 Route::group(['prefix' => 'menu'], function() {
     Route::get('/', [MenuController::class, 'index'])->name('menu');

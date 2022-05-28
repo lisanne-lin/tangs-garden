@@ -43,7 +43,7 @@
             <div>
                 <div class="w-full h-[380px] bg-[url('/img/header.jpeg')] bg-cover bg-center nice-shadow rounded-md"></div>
             </div>
-            <div class="prose-lg">
+            <div class="prose">
                 <h2>Ons verhaal</h2>
                 <p>
                     Sinds juni 2013 runt het echtpaar Li en Lin het restaurant. Ze hebben vele verbeteringen doorgevoerd. Desalniettemin vragen ze de vaste klanten om ook met hen mee te denken en suggesties te doen voor verbeteringen in de kaart.

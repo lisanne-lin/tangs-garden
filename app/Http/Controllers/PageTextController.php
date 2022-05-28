@@ -7,6 +7,15 @@ use App\Models\PageText;
 
 class PageTextController extends Controller
 {
+    public function maandaanbieding() {
+        $page_text = PageText::where('slug', 'maandaanbieding')
+            ->first();
+
+        return view('/maandaanbieding', [
+            'page_text' => $page_text,
+        ]);
+    }
+
     public function update(Request $request) {
         $keys = $request->all();
         unset($keys['_token']);

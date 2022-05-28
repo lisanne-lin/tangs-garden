@@ -80,7 +80,7 @@
         @endif
 
         @if ($page_text)
-            <section class="mt-12 text-left">
+            <section class="mt-12 text-left prose">
                 {!! $page_text->body !!}
             </section>
         @endif
