@@ -20,7 +20,13 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $user = User::all();
+
+        if ($user->count() >= 1) {
+            return redirect('/');
+        } else {
+            return view('auth.register');
+        }
     }
 
     /**

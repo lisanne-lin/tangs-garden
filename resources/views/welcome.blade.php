@@ -6,7 +6,7 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Ho Wan Loi') }}</title>
     </head>
     <body>
         @include('layouts.navigation')
