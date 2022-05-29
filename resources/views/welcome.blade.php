@@ -39,8 +39,8 @@
             </div>
             <div class="hidden lg:block flex-1 bg-[url('/img/header.jpeg')] bg-cover bg-center"></div>
         </header>
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 grid grid-cols-2 gap-12">
-            <div>
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="hidden md:block">
                 <div class="w-full h-[380px] bg-[url('/img/header.jpeg')] bg-cover bg-center nice-shadow rounded-md"></div>
             </div>
             <div class="prose">

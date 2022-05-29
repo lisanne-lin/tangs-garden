@@ -12,10 +12,10 @@
 <body class="bg-[url('/img/bg_pattern.svg')] bg-center bg-repeat-y">
     @include('layouts.navigation')
 
-    <main class="max-w-2xl mt-6 mx-auto text-center min-h-screen">
+    <main class="max-w-2xl mt-12 mx-auto text-center min-h-screen">
         <h1 class="text-4xl text-red-500 font-medium">{!! $page_text->title !!}</h1>
         @if ($page_text)
-            <section class="mt-4 mb-12 text-left prose">
+            <section class="mt-4 mb-12 text-left prose px-4">
                 {!! $page_text->body !!}
             </section>
         @endif

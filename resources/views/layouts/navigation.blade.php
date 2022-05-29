@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0 w-full z-50">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0 w-full z-50 nice-shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -99,6 +99,12 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
                 {{ __('Menukaart') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('maandaanbieding')" :active="request()->routeIs('maandaanbieding')">
+                {{ __('Maandaanbieding') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                {{ __('Contact') }}
             </x-responsive-nav-link>
         </div>
 
