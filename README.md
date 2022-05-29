@@ -4,14 +4,13 @@ To run laravel you need to install *php* and *composer*. If all that is done be 
 
 To get all settings right create an `.env` and set all things correctly(check `.env.example` for an example)
 
-**don't forget to add the page text**
-
 If you have installed it you need to run the following commands:
 
 ```bash
 # ONCE
 npm i # to install all npm packages
 php artisan migrate:fresh # to ensure all databases are installed
+php artisan db:seed # to seed the database 
 
 # DEVELOPMENT
 php artisan serve # to run laravel
