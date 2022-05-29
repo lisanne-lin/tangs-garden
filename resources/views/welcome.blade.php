@@ -39,18 +39,20 @@
             </div>
             <div class="hidden lg:block flex-1 bg-[url('/img/header.jpeg')] bg-cover bg-center"></div>
         </header>
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 grid grid-cols-2 gap-12">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-16 grid grid-cols-2 gap-12">
             <div>
                 <div class="w-full h-[380px] bg-[url('/img/header.jpeg')] bg-cover bg-center nice-shadow rounded-md"></div>
             </div>
             <div class="prose">
                 <h2>Ons verhaal</h2>
-                <p>
+                <p class="text-gray-600">
                     Sinds juni 2013 runt het echtpaar Li en Lin het restaurant. Ze hebben vele verbeteringen doorgevoerd. Desalniettemin vragen ze de vaste klanten om ook met hen mee te denken en suggesties te doen voor verbeteringen in de kaart.
                     <br><br>
                     Alle ingrediënten zijn van topkwaliteit en zijn vers bereid. Het gebruik van kruiden is erg persoonsgebonden. U zult de verfijnde smaak van de kok vast proeven in de gerechten. 
                 </p>
             </div>
         </main>
+
+        @include('layouts.footer')
     </body>
 </html>

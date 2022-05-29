@@ -12,7 +12,7 @@
 <body class="bg-[url('/img/bg_pattern.svg')] bg-center bg-repeat-y">
     @include('layouts.navigation')
 
-    <main class="max-w-4xl mt-12 mx-auto text-center">
+    <main class="max-w-4xl mt-12 mx-auto text-center min-h-screen">
         <h1 class="text-4xl text-red-500 font-medium">Menukaart</h1>
         @if (sizeof($sorted_menu_items))
             <div class="flex justify-between">
@@ -85,6 +85,8 @@
             </section>
         @endif
     </main>
+
+    @include('layouts.footer')
 
     <script>
         // scroll to center of clicked link
