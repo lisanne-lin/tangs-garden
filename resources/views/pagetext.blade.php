@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <title>{{ config('app.name', 'Laravel') . ' | Maandaanbieding' }}</title>
+    <title>{{ $page_text->title . ' | ' .  config('app.name', 'Laravel') }}</title>
 </head>
 
 <body class="bg-[url('/img/bg_pattern.svg')] bg-center bg-repeat-y">

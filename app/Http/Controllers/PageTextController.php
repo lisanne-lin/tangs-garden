@@ -6,23 +6,28 @@ use Illuminate\Http\Request;
 use App\Models\PageText;
 
 class PageTextController extends Controller
-{
-    public function maandaanbieding() {
-        $page_text = PageText::where('slug', 'maandaanbieding')
+{   
+    /**
+     * Get the slugs information form the database and return a pagetext view with it.
+     * 
+     * @param string $slug the slug of the page you want to load.
+     * @return mixed returns the view with the page text.
+     */
+    private function pageText(string $slug) {
+        $page_text = PageText::where('slug', $slug)
             ->first();
 
-        return view('/maandaanbieding', [
+        return view('/pagetext', [
             'page_text' => $page_text,
         ]);
     }
 
-    public function contact() {
-        $page_text = PageText::where('slug', 'contact')
-            ->first();
+    public function maandaanbieding() {
+        return $this->pageText('maandaanbieding');
+    }
 
-        return view('/contact', [
-            'page_text' => $page_text,
-        ]);
+    public function contact() {
+        return $this->pageText('contact');
     }
 
     public function update(Request $request) {
