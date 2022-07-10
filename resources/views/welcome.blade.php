@@ -16,9 +16,9 @@
                 <div class="lg:max-w-[620px] ml-auto p-4">
                     <h1 class="text-3xl md:text-5xl font-semibold mb-4 text-gray-900">
                         Welkom Bij Chinees Indisch Afhaalcentrum <br>
-                        "Ho Wan Loi".
+                        "Tang's Garden"
                     </h1>
-                    <p class="text-gray-500 mb-8">
+                    <p class="text-emerald-400 mb-8 text-xl">
                         maandag t/m zaterdag van 16.00-21.00 uur
                         zon- en feestdagen van 16.00-22.00 uur
                         <br><br>
