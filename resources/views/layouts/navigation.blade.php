@@ -1,29 +1,29 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0 w-full z-50 nice-shadow">
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0  w-full z-50 nice-shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-center h-20">
             <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a class="text-red-500 font-bold" href="{{ route('home') }}">
-                        Ho-wan-loi
-                    </a>
-                </div>
-
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex shrink-0">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
+                     <!-- Logo -->
+                     <div class="flex items-center">
+                    <a href="{{ route('home') }}">
+                        <img class="object-scale-down h-10 w-10" src ="img/logo.png">
+                    </a>
+                </div>
                     <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
                         {{ __('Menukaart') }}
                     </x-nav-link>
                     <x-nav-link :href="route('maandaanbieding')" :active="request()->routeIs('maandaanbieding')">
                         {{ __('Maandaanbieding') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                        {{ __('Contact') }}
-                    </x-nav-link>
+                    
                 </div>
             </div>
 

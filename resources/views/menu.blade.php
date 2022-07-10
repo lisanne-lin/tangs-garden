@@ -13,17 +13,30 @@
     @include('layouts.navigation')
 
     <main class="max-w-4xl mt-12 mx-auto text-center min-h-screen px-4">
-        <h1 class="text-4xl text-red-500 font-medium">Menukaart</h1>
+        <h1 class="text-4xl font-medium">Menukaart</h1>
         @if (sizeof($sorted_menu_items))
             <div class="flex justify-between">
+                <div class="hidden md:block mr-4">
+                    <ul
+                        class="bg-white nice-shadow border inline-block p-4 rounded-md text-left list-disc list-inside sticky mt-16 top-20 z-10">
+                        <h4 class="font-medium text-lg mb-4">Navigatie</h4>
+                        @foreach ($sorted_menu_items as $key => $menu_items)
+                            <li class="mb-4">
+                                <a href="#{{ str_replace(' ', '-', $key) }}"
+                                    class=" hover:underline">{{ ucfirst($key) }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
 
                 <div class="w-full pr-4">
                     @foreach ($sorted_menu_items as $key => $menu_items)
                         <h2 id="{{ str_replace(' ', '-', $key) }}"
-                            class="text-xl mt-8 mb-2 text-gray-700 text-left font-semibold">{{ ucfirst($key) }}</h2>
-                        <div class="relative overflow-x-auto border border-red-100 rounded-lg">
+                            class="text-xl mt-8 mb-2 text-white text-left font-semibold">{{ ucfirst($key) }}</h2>
+                        <div class="relative overflow-x-auto border border-color rounded-lg">
                             <table class="w-full text-left text-gray-500">
-                                <thead class="text-xs text-red-50 bg-red-500">
+                                <thead class="text-xs menu-background-color">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">
                                             Nummer
@@ -38,7 +51,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($menu_items as $menu_item)
-                                        <tr class="border-t border-red-100 odd:bg-white even:bg-red-50">
+                                        <tr class="border-t0 odd:bg-white menu-background-color">
                                             <th scope="row"
                                                 class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap">
                                                 {{ $menu_item->number }}{{ $menu_item->letter }}
@@ -60,19 +73,6 @@
                             </table>
                         </div>
                     @endforeach
-                </div>
-                <div class="hidden md:block">
-                    <ul
-                        class="bg-white nice-shadow border inline-block p-4 rounded-md text-left list-disc list-inside sticky mt-16 top-20 z-10">
-                        <h4 class="font-medium text-lg mb-4 text-slate-900">Navigatie</h4>
-                        @foreach ($sorted_menu_items as $key => $menu_items)
-                            <li class="mb-4">
-                                <a href="#{{ str_replace(' ', '-', $key) }}"
-                                    class="underline text-gray-700 hover:text-red-500 transition-colors">{{ ucfirst($key) }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
                 </div>
             </div>
         @else
