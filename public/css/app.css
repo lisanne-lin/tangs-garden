@@ -706,12 +706,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }.top-20{
   top: 5rem;
-}.bottom-8{
-  bottom: 2rem;
-}.bottom-2{
-  bottom: 0.5rem;
-}.bottom-0{
-  bottom: 0px;
 }.z-0{
   z-index: 0;
 }.z-50{
@@ -1213,6 +1207,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }.ease-in{
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}*{
+  color: #33312F;
 }.nice-shadow {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }.ck-editor {
@@ -1237,19 +1233,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.625em;
 }.ck-editor li {
   padding-left: 0.375em;
-}*{
-  color: #33312F;
 }p{
   font-family: "Libre Franklin", sans-serif;
   font-weight: 300;
 
-}b{
+}b, p{
   font-family: "Libre Franklin", sans-serif;
 }.main-color{
   background-color: #6B5541;
 }.border-color{
-  border: color 1px solid #77685A;
-}.menu-background-color{
+  border: bottom 1px solid #77685A;
+}.menu-bg-color{
   background-color: #E1DEDB;
 }h1,
 h3{
@@ -1260,6 +1254,11 @@ h3{
   font-weight: 400;
 }li{ 
   list-style-type: none;
+}.border-light-brown{
+  border-bottom: 2px solid #6B5541;
+}.border-brown {
+  --tw-border-opacity: 1;
+  border-color: #6B5541;
 }.odd\:bg-white:nth-child(odd){
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1293,9 +1292,6 @@ h3{
 }.hover\:text-gray-900:hover{
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
-}.hover\:text-red-500:hover{
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
 }.hover\:underline:hover{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1337,9 +1333,6 @@ h3{
 }.focus\:text-gray-800:focus{
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
-}.focus\:text-red-800:focus{
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
 }.focus\:outline-none:focus{
   outline: 2px solid transparent;
   outline-offset: 2px;

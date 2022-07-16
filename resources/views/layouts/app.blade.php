@@ -15,6 +15,9 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/modal.js') }}" defer></script>
+
+
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">

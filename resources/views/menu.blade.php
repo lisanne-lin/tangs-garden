@@ -36,7 +36,7 @@
                             class="text-xl mt-8 mb-2 text-white text-left font-semibold">{{ ucfirst($key) }}</h2>
                         <div class="relative overflow-x-auto border border-color rounded-lg">
                             <table class="w-full text-left text-gray-500">
-                                <thead class="text-xs menu-background-color">
+                                <thead class="text-xs menu-bg-color">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">
                                             Nummer
@@ -51,7 +51,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($menu_items as $menu_item)
-                                        <tr class="border-t0 odd:bg-white menu-background-color">
+                                        <tr class="border-t0 odd:bg-white menu-bg-color">
                                             <th scope="row"
                                                 class="px-6 py-4 font-medium text-gray-700 whitespace-nowrap">
                                                 {{ $menu_item->number }}{{ $menu_item->letter }}

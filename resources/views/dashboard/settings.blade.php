@@ -91,7 +91,7 @@
             @foreach ($page_texts as $page_text)
                 ClassicEditor
                     .create( document.querySelector( '#{{ $page_text->slug }}' ), {
-                        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable' ],
+                        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable',],
                     } )
                     .catch( error => {
                         console.error( error );

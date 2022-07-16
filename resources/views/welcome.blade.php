@@ -52,10 +52,10 @@
             <div class="text-center h-auto w-2/4">
                 <h2 class="text-5xl mb-8">Welkom bij Tang's Garden</h2>
                 <p class="text-base">
-                    Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China. Deze gerechten zijn uit de volgende culinaire keukens samengesteld: <br>
+                    Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China. Deze gerechten zijn uit de volgende culinaire keukens samengesteld: <br> <br>
                     Kantoneze keuken Zuid-China <br>
                     Szechuan keuken West-China <br> <br>    
-                    Desgewenst zullen we u helpen bij het maken van een keuze, zodat er een harmonieuze samenstelling van de gerechten onstaat.
+                    Desgewenst zullen we u helpen bij het maken van een keuze, zodat er een harmonieuze samenstelling van de gerechten onstaat. Voor allergenen en andere vragen u ons altijd contact met ons opnemen. We hopen u snel te zien!
                 </p>
             </div>
         </main>

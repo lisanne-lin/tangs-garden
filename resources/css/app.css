@@ -1,7 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');.nice-shadow {
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  color: #33312F;
+}
+.nice-shadow {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .ck-editor {
@@ -36,9 +42,6 @@
 .ck-editor li {
   padding-left: 0.375em;
 }
-*{
-  color: #33312F;
-}
 
 p{
   font-family: "Libre Franklin", sans-serif;
@@ -46,7 +49,7 @@ p{
 
 }
 
-b{
+b, p{
   font-family: "Libre Franklin", sans-serif;
 }
 
@@ -54,11 +57,12 @@ b{
   background-color: #6B5541;
 }
 
+
 .border-color{
-  border: color 1px solid #77685A;
+  border: bottom 1px solid #77685A;
 }
 
-.menu-background-color{
+.menu-bg-color{
   background-color: #E1DEDB;
 }
 
@@ -75,4 +79,13 @@ h2{
 
 li{ 
   list-style-type: none;
+}
+
+.border-light-brown{
+  border-bottom: 2px solid #6B5541;
+}
+
+.border-brown {
+  --tw-border-opacity: 1;
+  border-color: #6B5541;
 }
