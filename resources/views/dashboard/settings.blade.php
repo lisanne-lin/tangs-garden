@@ -85,17 +85,26 @@
         </div>
     </div>
 
+    <div class="editor">
 
+    </div>
+
+    <script src="{{ asset('js/ckeditor.js') }}"></script>
     <script>
         @if ($page_texts->count())
             @foreach ($page_texts as $page_text)
-                ClassicEditor
-                    .create( document.querySelector( '#{{ $page_text->slug }}' ), {
-                        toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'insertTable',],
-                    } )
-                    .catch( error => {
-                        console.error( error );
-                    } );
+                ClassicEditor.create( document.querySelector( '#{{ $page_text->slug }}' ), {
+                    licenseKey: '',
+                } )
+                .then( editor => {
+                    window.editor = editor;    
+                } )
+                .catch( error => {
+                    console.error( 'Oops, something went wrong!' );
+                    console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+                    console.warn( 'Build id: yykzde5l84h5-tuxnet8y7dw8' );
+                    console.error( error );
+                } );
             @endforeach
         @endif
         

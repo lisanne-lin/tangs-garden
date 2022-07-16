@@ -33,7 +33,7 @@
                 <div class="w-full pr-4">
                     @foreach ($sorted_menu_items as $key => $menu_items)
                         <h2 id="{{ str_replace(' ', '-', $key) }}"
-                            class="text-xl mt-8 mb-2 text-white text-left font-semibold">{{ ucfirst($key) }}</h2>
+                            class="text-xl mt-8 mb-2 text-left font-semibold">{{ ucfirst($key) }}</h2>
                         <div class="relative overflow-x-auto border border-color rounded-lg">
                             <table class="w-full text-left text-gray-500">
                                 <thead class="text-xs menu-bg-color">
