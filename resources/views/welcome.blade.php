@@ -14,7 +14,7 @@
         <header class="flex">
             <div class="hidden lg:block flex-1 bg-[url('/img/header.jpeg')] bg-cover bg-center"></div>
             <div class="flex-1 py-24 lg:py-[15vh]">
-                <div class="lg:max-w-[620px] ml-20 p-4">
+                <div class="lg:max-w-[620px] p-4">
                     <h1 class="text-4xl md:text-7xl mb-8">
                         Tang's Garden
                     </h1>

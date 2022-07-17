@@ -89,3 +89,7 @@ li{
   --tw-border-opacity: 1;
   border-color: #6B5541;
 }
+
+.bg-cover{
+  margin-right: 5rem;
+}

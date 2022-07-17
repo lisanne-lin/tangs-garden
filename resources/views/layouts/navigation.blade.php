@@ -8,8 +8,8 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
-                        {{ __('Contact') }}
+                    <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
+                        {{ __('Menukaart') }}
                     </x-nav-link>
                      <!-- Logo -->
                      <div class="flex items-center">
@@ -17,9 +17,9 @@
                         <img class="object-scale-down h-10 w-10" src ="../img/logo.png">
                     </a>
                 </div>
-                    <x-nav-link :href="route('menu')" :active="request()->routeIs('menu')">
-                        {{ __('Menukaart') }}
-                    </x-nav-link>
+                <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                    {{ __('Contact') }}
+                </x-nav-link>
                     <x-nav-link :href="route('maandaanbieding')" :active="request()->routeIs('maandaanbieding')">
                         {{ __('Maandaanbieding') }}
                     </x-nav-link>
