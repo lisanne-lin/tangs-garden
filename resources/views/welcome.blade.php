@@ -49,7 +49,7 @@
           
         </header>
         <main class="flex mx-auto px-8 my-40 gap-12 justify-center">
-            <div class="text-center h-auto w-2/4">
+            <div class="text-center h-auto sm:w-2/4 ">
                 <h2 class="text-4xl mb-8">Welkom bij Tang's Garden</h2>
                 <p class="text-base">
                     Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China. Deze gerechten zijn uit de volgende culinaire keukens samengesteld: <br> <br>
