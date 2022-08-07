@@ -15,7 +15,7 @@
             <div class="hidden lg:block flex-1 bg-[url('/img/header.jpeg')] bg-cover bg-center"></div>
             <div class="flex-1 py-24 lg:py-[15vh]">
                 <div class="lg:max-w-[620px] p-4">
-                    <h1 class="text-4xl md:text-7xl mb-8">
+                    <h1 class="text-5xl md:text-7xl mb-8">
                         Tang's Garden
                     </h1>
                     <h3 class="text-xl mb-8">Chinees Specialiteiten Restaurant en Afhaal </h3>
@@ -50,7 +50,7 @@
         </header>
         <main class="flex mx-auto px-8 my-40 gap-12 justify-center">
             <div class="text-center h-auto w-2/4">
-                <h2 class="text-5xl mb-8">Welkom bij Tang's Garden</h2>
+                <h2 class="text-4xl mb-8">Welkom bij Tang's Garden</h2>
                 <p class="text-base">
                     Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China. Deze gerechten zijn uit de volgende culinaire keukens samengesteld: <br> <br>
                     Kantoneze keuken Zuid-China <br>

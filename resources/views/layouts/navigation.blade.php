@@ -1,8 +1,14 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed top-0  w-full z-50 nice-shadow">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex sm:justify-center h-20 justify-end">
+        <div class="flex h-20 justify-between sm:justify-center">
             <div class="flex">
+                <!-- Logo -->
+                <div class=" shrink-0 flex items-center sm:hidden md:text-left">
+                    <a href="{{ route('home') }}">
+                        <img class="object-scale-down h-10 w-10 " src ="../img/logo.png">
+                    </a>
+                </div>
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex shrink-0">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">

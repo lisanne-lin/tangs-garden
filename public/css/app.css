@@ -765,8 +765,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.25rem;
 }.mt-16{
   margin-top: 4rem;
-}.ml-20{
-  margin-left: 5rem;
 }.mb-8{
   margin-bottom: 2rem;
 }.mb-12{
@@ -831,10 +829,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   max-width: 72rem;
 }.max-w-4xl{
   max-width: 56rem;
+}.max-w-\[750px\]{
+  max-width: 750px;
 }.flex-1{
   flex: 1 1 0%;
-}.flex-initial{
-  flex: 0 1 auto;
+}.flex-none{
+  flex: none;
 }.shrink-0{
   flex-shrink: 0;
 }.origin-top-left{
@@ -867,12 +867,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-wrap: wrap;
 }.items-center{
   align-items: center;
+}.justify-start{
+  justify-content: flex-start;
 }.justify-end{
   justify-content: flex-end;
 }.justify-center{
   justify-content: center;
 }.justify-between{
   justify-content: space-between;
+}.justify-items-start{
+  justify-items: start;
 }.justify-items-center{
   justify-items: center;
 }.gap-12{
@@ -976,6 +980,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }.object-scale-down{
   -o-object-fit: scale-down;
      object-fit: scale-down;
+}.object-left{
+  -o-object-position: left;
+     object-position: left;
 }.p-2{
   padding: 0.5rem;
 }.p-6{
@@ -1406,10 +1413,14 @@ h3{
     max-width: 28rem;
   }.sm\:flex-1{
     flex: 1 1 0%;
+  }.sm\:flex-none{
+    flex: none;
   }.sm\:items-center{
     align-items: center;
   }.sm\:justify-start{
     justify-content: flex-start;
+  }.sm\:justify-end{
+    justify-content: flex-end;
   }.sm\:justify-center{
     justify-content: center;
   }.sm\:justify-between{
@@ -1423,6 +1434,9 @@ h3{
     padding-top: 0px;
   }.sm\:text-center{
     text-align: center;
+  }.sm\:text-5xl{
+    font-size: 3rem;
+    line-height: 1;
   }
 }@media (min-width: 768px){.md\:mr-6{
     margin-right: 1.5rem;
@@ -1430,16 +1444,22 @@ h3{
     display: block;
   }.md\:flex{
     display: flex;
+  }.md\:hidden{
+    display: none;
   }.md\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }.md\:items-center{
     align-items: center;
+  }.md\:justify-start{
+    justify-content: flex-start;
   }.md\:justify-between{
     justify-content: space-between;
   }.md\:gap-6{
     gap: 1.5rem;
   }.md\:p-6{
     padding: 1.5rem;
+  }.md\:text-left{
+    text-align: left;
   }.md\:text-7xl{
     font-size: 4.5rem;
     line-height: 1;

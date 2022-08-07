@@ -13,11 +13,11 @@
     @include('layouts.navigation')
 
     <main class=" flex">
-        <div class="hidden lg:block flex-1 bg-cover bg-center h-auto {{ ($page_text->slug == 'maandaanbieding') ? 'bg-[url(/img/maandaanbieding.jpg)]' : 'bg-[url(/img/contact.jpg)]' }}    "></div>
-        <div class="flex-initial sm:flex-1 py-24 lg:py-[15vh]">
+        <div class="flex-1 hidden lg:block bg-cover bg-center h-auto max-w-[750px] {{ ($page_text->slug == 'maandaanbieding') ? 'bg-[url(/img/maandaanbieding.jpg)]' : 'bg-[url(/img/contact.jpg)]' }} "></div>
+        <div class="flex-none sm:flex-1 py-24 lg:py-[15vh] mx-auto {{ ($page_text->slug == 'maandaanbieding') ? 'sm:flex-none' : 'flex-1' }}">
             <div class="lg:max-w-[620px] p-4">
               
-                <h1 class="text-5xl font-medium px-4 mb-12 {{ ($page_text->slug == 'maandaanbieding') ? 'text-center' : 'text-left' }}">{!! $page_text->title !!}</h1>
+                <h1 class="text-4xl sm:text-5xl font-medium px-4 mb-12 {{ ($page_text->slug == 'maandaanbieding') ? 'text-center' : 'text-left' }}">{!! $page_text->title !!}</h1>
         
                 @if ($page_text)
                     <section class="mt-4 mb-12 text-left prose px-4">
