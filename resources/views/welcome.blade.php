@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Chinees specialiteiten afhaalcentrum en restaurant met een kantonees keuken in Goirle. Vandaag open tot 21:00">
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,15 +23,15 @@
                     <p class="text-slate-800 mb-8 text-sm">
                         Maandag van 16:00 - 21:00 <br>
                         Woensdag  t/m zaterdag 16:00 - 21:30 <br>
-                        Zondag van 12:00 - 22:00 
-                        
+                        Zondag van 12:00 - 22:00
+
                         <br><br>
                         <div class="mb-8">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#6B5541" class="bi bi-geo-alt-fill h-5 w-5 inline" viewBox="0 0 16 16">
                                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                               </svg>
                        Tilburgseweg 14, 5051 AH Goirle
-                        
+
                         </div>
                     </p>
                     <p>
@@ -46,16 +47,14 @@
                     </p>
                 </div>
             </div>
-          
+
         </header>
         <main class="flex mx-auto px-8 my-40 gap-12 justify-center">
             <div class="text-center h-auto sm:w-2/4 ">
                 <h2 class="text-4xl mb-8">Welkom bij Tang's Garden</h2>
                 <p class="text-base">
-                    Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China. Deze gerechten zijn uit de volgende culinaire keukens samengesteld: <br> <br>
-                    Kantoneze keuken Zuid-China <br>
-                    Szechuan keuken West-China <br> <br>    
-                    Desgewenst zullen we u helpen bij het maken van een keuze, zodat er een harmonieuze samenstelling van de gerechten onstaat. Voor allergenen en andere vragen u ons altijd contact met ons opnemen. We hopen u snel te zien!
+                    Onze keuken biedt u de mogelijkheid om kennis te maken met de originele gerechten uit China.
+                    Desgewenst zullen we u helpen bij het maken van een keuze, zodat er een harmonieuze samenstelling van de gerechten ontstaat. Voor allergenen en andere vragen u ons altijd contact met ons opnemen. We hopen u snel te zien!
                 </p>
             </div>
         </main>

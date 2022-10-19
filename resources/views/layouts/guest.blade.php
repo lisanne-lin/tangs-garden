@@ -6,7 +6,7 @@
         <link rel="icon" type="image/x-icon" href="/favicon.ico">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Ho Wan Loi') }}</title>
+        <title>{{ config('app.name', 'Tangs Garden') }}</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
